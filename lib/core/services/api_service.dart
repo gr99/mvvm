@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 
 class ApiService {
   // Private constructor
-  ApiService._internal();
+  ApiService._internal() {
+    init(); // Initialize Dio here
+  }
 
   // The singleton instance
   static final ApiService _instance = ApiService._internal();
@@ -17,7 +19,7 @@ class ApiService {
   void init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://picsum.photos'
+        baseUrl: 'https://picsum.photos',
       ),
     );
 

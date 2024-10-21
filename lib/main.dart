@@ -14,6 +14,7 @@ void main() {
       LoggingService.logError(navigatorKey.currentState!.overlay!.context,
           details.exceptionAsString(), details.stack);
     };
+    LoggingService.init();
     await resetPreferences();
     runApp(const MyApp());
   }, (error, stack) {
